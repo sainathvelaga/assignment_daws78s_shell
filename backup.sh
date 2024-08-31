@@ -13,6 +13,7 @@ DESTINATION_DIRECTORY=$2
 if [ $# -ne 2 ]
 then
     echo -e "$R Please pass source and destination , Usage : Script_name source_dir dest_dir $N"
+    exit 1
 else
     echo -e "$G proceeding with the backup $N"
 fi
