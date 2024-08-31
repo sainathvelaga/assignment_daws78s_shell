@@ -1,5 +1,5 @@
 #!/bin/bash
-
+TIMESTAMP=$(date +%F-%H-%M-%S)
 DATE=$(date +"%d-%b-%Y")
 
 R="\e[31m"
@@ -10,7 +10,14 @@ N="\e[0m"
 SOURCE_DIRECTORY=$1
 DESTINATION_DIRECTORY=$2
 
-tar -zcvf Backup-$DATE.tgz $SOURCE_DIRECTORY
+if [ $# -ne 2 ]
+then
+    echo -e "$R Please pass source and destination , Usage : Script_name source_dir dest_dir $N"
+else
+    echo -e "$G proceeding with the backup $N"
+fi
+
+tar -zcvf Backup-$TIMESTAMP.tgz $SOURCE_DIRECTORY
 mv *.tgz $DESTINATION_DIRECTORY
 echo "Backup finished"
 
