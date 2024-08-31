@@ -1,7 +1,7 @@
 #!/bin/bash
-SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
-TIMESTAMP=$(date +%F-%H-%M-%S)
-LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
+
+DATE=$(date +"%d-%b-%Y")
+
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
@@ -18,6 +18,12 @@ else
     echo -e "$G proceeding with the backup $N"
 fi
 
-tar czf $DESTINATION_DIRECTORY $SOURCE_DIRECTORY
+tar -zcvf HTML-$DATE.tgz $SOURCE_DIRECTORY
+mv *.tgz $2
 echo "Backup finished"
+
+
+
+
+
 
