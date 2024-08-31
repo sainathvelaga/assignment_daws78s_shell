@@ -7,10 +7,10 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-SOURCE_DIRECTORY=/etc/nginx
-DESTINATION_DIRECTORY=/tmp/
+SOURCE_DIRECTORY=$1
+DESTINATION_DIRECTORY=$2
 
-tar -zcvf HTML-$DATE.tgz $SOURCE_DIRECTORY
+tar -zcvf Backup-$DATE.tgz $SOURCE_DIRECTORY
 mv *.tgz $DESTINATION_DIRECTORY
 echo "Backup finished"
 
