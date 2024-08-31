@@ -7,8 +7,8 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-SOURCE_DIRECTORY=$1
-DESTINATION_DIRECTORY=$2
+SOURCE_DIRECTORY=/usr/local/nginx/conf
+DESTINATION_DIRECTORY=/tmp/
 
 if [ $# -ne 2 ]
 then
@@ -19,7 +19,7 @@ else
 fi
 
 tar -zcvf HTML-$DATE.tgz $SOURCE_DIRECTORY
-mv *.tgz $2
+mv *.tgz $DESTINATION_DIRECTORY
 echo "Backup finished"
 
 
